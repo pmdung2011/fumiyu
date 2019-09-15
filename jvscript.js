@@ -27,12 +27,12 @@ var result = {
 	5: "Invalid input"
 }
 
-var CORRECT_NUMBER = "10";
-var INTERVAL = "2";
+var CORRECT_NUMBER = 10;
+var INTERVAL =2;
 
 do {
 	var num = prompt ("What is your number ?");
-	
+	var num = "10";
 	var predictedNumber = predictNumber(num, CORRECT_NUMBER, INTERVAL);
 	console.log(predictedNumber);
 	alert(result[predictedNumber]);
