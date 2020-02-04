@@ -19,8 +19,8 @@ public class MyLinkedList {
         }
     }
 
-    //Method to add a new node
-    public void add( int data){
+   // Method to add a new node
+    public  void add( int data){
         //Create a new node with given data
         Node new_node = new Node(data);
         new_node.next = null;
@@ -29,9 +29,9 @@ public class MyLinkedList {
         //then make the new node as head
         if(head == null){
             head = new_node;
-
+            return;
         }
-        else{
+
             //Else traverse till the last node
             //and insert the new_node there,
             //which means change the next of last node to new node.
@@ -50,8 +50,10 @@ public class MyLinkedList {
             }
             //After the last node is found. change the next of last node to new_node
             last.next = new_node;
-        }
+            return;
+
     }
+
 
     //Method to insert a node after a given node
     public void insert(Node prev_node, int data){
@@ -92,26 +94,25 @@ public class MyLinkedList {
 
         // If key was not present in linked list
         if (temp == null) {
-            System.out.println(data + " is not in the list.");
+            System.out.println(key + " is not in the list.");
             return;
         }
 
         // Unlink the node from linked list
         if(temp != null){
             prev.next = temp.next;
-            System.out.println(data + " found and deleted.");
+            System.out.println(key + " found and deleted.");
         }
 
     }
 
-
     //Method to printout the List
-    public void printList(MyLinkedList list){
+    public static void printList(MyLinkedList list){
         Node currNode = list.head;
         System.out.print("Linked List: ");
 
         //traverse through the list
-        while(currNode.next != null){
+        while(currNode != null){
             //print the data at the curent node
             System.out.print(currNode.data + " ");
             //Go to the next node
@@ -119,5 +120,12 @@ public class MyLinkedList {
         }
     }
 
-
+    public static void main(String [] args){
+        MyLinkedList list = new MyLinkedList();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        list.add(4);
+        printList(list);
+    }
 }
