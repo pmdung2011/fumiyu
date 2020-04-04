@@ -8,12 +8,14 @@ public class SeatReservation {
         theatre.getSeats();
 
         Scanner sc = new Scanner(System.in);
-        String ans;
+
         boolean quit = false;
-        while(quit == false){
+
+        while(!quit){
             System.out.print("Enter seat number: ");
-            ans = sc.next();
-            if(theatre.reserveSeat(ans)){
+            String ans = sc.nextLine();
+            String name = ans.substring(0,1).toUpperCase() + ans.substring(1);
+            if(theatre.reserveSeat(name)){
                 System.out.println("Please pay.");
             }
             else{
@@ -21,7 +23,7 @@ public class SeatReservation {
             }
             System.out.println("Continue ? (Y/N)");
             String rep = sc.next();
-            if(rep == "N" || rep == "n"){
+            if(rep.equals("N") || rep.equals("n")){
                 quit = true;
             }
         }

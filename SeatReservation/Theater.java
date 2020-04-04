@@ -21,19 +21,28 @@ public class Theater {
         return theatreName;
     }
 
-    public boolean reserveSeat(String seatNum){
+    private Seats seatSearch(String seatNum){
         Seats requestedSeat = null;
-        for(Seats seat : seats){
-            if(seat.getSeatNumber().equals(seatNum)){
-                requestedSeat = seat;
-                break;
+        for(Seats i : seats)
+        {
+            if(i.getSeatNumber().equals(seatNum)){
+                requestedSeat = i;
             }
         }
-        if(requestedSeat == null){
-            System.out.println("There is no seat" + seatNum);
-            return false;
+        if (requestedSeat == null) {
+            System.out.println("There is no seat with this number.");
         }
-        return requestedSeat.reserve();
+        return requestedSeat;
+    }
+
+    public boolean reserveSeat(String seatNum){
+       Seats seat = seatSearch(seatNum);
+       return seat.reserve();
+    }
+
+    public boolean cancelSeat(String seatNum){
+        Seats seat = seatSearch(seatNum);
+        return seat.cancel();
     }
 
     public void getSeats(){
@@ -41,5 +50,4 @@ public class Theater {
             System.out.println(seat.getSeatNumber());
         }
     }
-
 }

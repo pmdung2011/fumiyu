@@ -20,6 +20,10 @@ public class Seats {
         }
     }
 
+    public boolean isReserved(){
+        return reserved;
+    }
+
     public boolean cancel(){
         if(this.reserved){
             this.reserved = false;
