@@ -30,7 +30,9 @@ public class PlayListOperator {
                     quit = true;
                     break;
                 case 1:
-                    if(!forward){
+                    if(!forward){ //Note that alternating calls to next and previous will return the same element repeatedly.
+                                    //vd: A B C, next() = A, next() = B
+                                    // next() = A, prev() = A;
                         if(iterator.hasNext()){
                             iterator.next();
                         }
