@@ -1,5 +1,6 @@
 package HackerRank;
 
+import java.util.List;
 import java.util.Scanner;
 import java.util.Arrays;
 import java.util.concurrent.ThreadLocalRandom;
@@ -56,19 +57,17 @@ public class MatrixDiagonalSum {
 
     }
 
-//    public static int diagonalDifference(List<List<Integer>> arr) {
-//        // Write your code here
-//        int sumL = 0;
-//        int sumR = 0;
-//        for (int i = 0; i < arr.size(); i++){
-//            sumL += arr.get(i).get(i);
-//            sumR += arr.get(i).get(arr.size()-1-i);
-//        }
-//
-//        int diff = Math.abs(sumL-sumR);
-//
-//        return diff;
-//    }
+    public static int diagonalDifference(List<List<Integer>> arr) {
+        // Write your code here
+        int sumL = 0;
+        int sumR = 0;
+        for (int i = 0; i < arr.size(); i++){
+            sumL += arr.get(i).get(i);
+            sumR += arr.get(i).get(arr.size()-1-i);
+        }
+
+        return Math.abs(sumL-sumR);
+    }
 
     public int getMatrixDiaSumLeft(){
         return this.sumL;
