@@ -57,6 +57,7 @@ public class MatrixDiagonalSum {
 
     }
 
+    //In case using List to create array
     public static int diagonalDifference(List<List<Integer>> arr) {
         // Write your code here
         int sumL = 0;
