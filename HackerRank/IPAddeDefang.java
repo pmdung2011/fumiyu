@@ -1,3 +1,5 @@
+package HackerRank;
+
 public class IPAddeDefang {
     public static String defangIp(String address){
 
