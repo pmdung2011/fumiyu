@@ -4,6 +4,8 @@ package HackerRank;
 * Input: [2,2,1]
 * Output: 1
 * */
+//ONLY WORK FOR AN ARRAY WITH THREE ELEMENTS
+// A XOR B XOR A = B
 public class SingleNumber {
     public static int singleNum(int[] nums){
         int a = 0;
