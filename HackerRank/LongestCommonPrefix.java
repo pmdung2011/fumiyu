@@ -27,11 +27,7 @@ public class LongestCommonPrefix {
         }
         return c == 0 ? "" : first.substring(0, c);
     }
-
-
-
-
-
+    
     public static void main(String[] args){
         String[] str = {"flower","flow","fight","oa"};
 
