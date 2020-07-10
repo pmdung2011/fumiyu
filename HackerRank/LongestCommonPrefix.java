@@ -14,7 +14,8 @@ public class LongestCommonPrefix {
           if (strs == null || strs.length == 0)
             return "";
 
-        Arrays.sort(strs);
+        Arrays.sort(strs); // important
+        
         String first = strs[0];
         String last = strs[strs.length - 1];
         int c = 0;
@@ -27,9 +28,9 @@ public class LongestCommonPrefix {
         }
         return c == 0 ? "" : first.substring(0, c);
     }
-    
+
     public static void main(String[] args){
-        String[] str = {"flower","flow","fight","oa"};
+        String[] str = {"flower","flow","fight","foa"};
 
         System.out.println(longestCommonPrefix(str));
     }
