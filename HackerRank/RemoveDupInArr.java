@@ -39,6 +39,7 @@ public class RemoveDupInArr {
         for(int i=1;i<nums.length;i++){
             if(nums[j]!=nums[i]){
                 nums[++j]=nums[i];
+                System.out.println("j: " + j);
             }
         }
         System.out.println(Arrays.toString(nums));
@@ -51,7 +52,7 @@ public class RemoveDupInArr {
 
     // 1 1 2: 1 ,2
     public static void main(String[] args){
-        int[] nums = {1,1,3,4};
+        int[] nums = {1,1,2};
         System.out.println(removeDuplicates(nums));
     }
 }
