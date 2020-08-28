@@ -32,6 +32,12 @@ public class RemoveDupInArr {
 //
 //        return map.size();
 
+        //The goal is to bring all the unique nums to the front of the array
+        //1 1 2 3
+        //1 2 2 3
+        //1 2 3 3
+        //    j
+        // new array size is j + 1
         if(nums.length==0){
             return 0;
         }
@@ -39,18 +45,11 @@ public class RemoveDupInArr {
         for(int i=1;i<nums.length;i++){
             if(nums[j]!=nums[i]){
                 nums[++j]=nums[i];
-                System.out.println("j: " + j);
             }
         }
-        System.out.println(Arrays.toString(nums));
         return j+1;
-
-
     }
-
-
-
-    // 1 1 2: 1 ,2
+    
     public static void main(String[] args){
         int[] nums = {1,1,2};
         System.out.println(removeDuplicates(nums));
