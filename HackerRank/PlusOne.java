@@ -10,7 +10,7 @@ Explanation: The array represents the integer 123.
 public class PlusOne {
     public static int[] plusOne(int[] digits) {
         for (int i = digits.length - 1; i >= 0 ; i--) {
-            if(digits[i] != 9){
+            if(digits[i] < 9){
                 digits[i]++;
                 return digits;
             }
