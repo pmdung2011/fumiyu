@@ -13,23 +13,36 @@ return [0, 1].*/
 public class checkSumK {
     public static int[] twoSum(int[] nums, int target) {
         Map<Integer, Integer> map = new HashMap<>();
-        for (int i = 0; i < nums.length; i++) {
-            int complement = target - nums[i];
-            if (map.containsKey(complement)) {
-                return new int[] {map.get(complement), i};
-
+        int i = 0;
+        for (int num : nums) {
+            if (map.containsKey(target - num)) {
+                return new int[]{map.get(target - num), i};
+            } else {
+                map.put(num, i);
             }
-            map.put(nums[i],i); // 2 - 0
-
-            System.out.println("Hashmap: " + map);
+            i++;
         }
-        throw new IllegalArgumentException("No two sum solution");
+        return new int[]{};
     }
 
-    public static void main(String[] args){
-        int[] nums = {2, 7, 11, 15};
+    //Brute force method with O(n^2)
+    public static int[] checkSum(int[] nums, int target) {
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = 1; j < nums.length; j++) {
+                if (nums[i] + nums[j] == target) {
+                    return new int[]{i, j};
+                }
+            }
+        }
+        throw new IllegalArgumentException("Invalid");
 
-        System.out.println(Arrays.toString(twoSum(nums,9)));
+    }
+
+
+    public static void main(String[] args) {
+        int[] nums = {3, 3};
+
+        System.out.println(Arrays.toString(checkSum(nums, 6)));
     }
 
 }
