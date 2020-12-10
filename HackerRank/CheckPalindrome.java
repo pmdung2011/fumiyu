@@ -42,19 +42,25 @@ public class CheckPalindrome {
         if (str == null || str.isEmpty()){
             return false;
         }
+        int counter = 0;
+        //Remove space and special characters
+        str = str.replaceAll("\\W", "").toLowerCase();
+        System.out.println("new String: " + str);
         for (int i = 0; i < str.length()/2 ; i++) {
             if(str.charAt(i) == str.charAt(str.length()-i-1)){
-                return true;
+                counter++;
             }
         }
-        return false;
+        return counter == str.length()/2;
     }
 
     public static void main(String[] args){
         String str1 = "Hannahx";
         String str2 = "cocoococ";
+        String str3 = "Race a car";
 
         System.out.println(isPanlindrome(str1));
         System.out.println(isPanlindrome(str2));
+        System.out.println(isPanlindrome(str3));
     }
 }
