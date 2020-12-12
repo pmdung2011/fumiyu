@@ -8,7 +8,7 @@ public class StringToInteger {
 
         int index = 0;
         int result = 0;
-        int sign = 0;
+        int sign = 1;
         //Remove leading space by moving shifting index for every space
         while (index < s.length() && (s.charAt(index) == ' ')) {
             index++;
