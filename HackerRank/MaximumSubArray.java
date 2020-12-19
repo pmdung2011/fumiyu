@@ -4,25 +4,14 @@ import java.lang.Math;
 
 public class MaximumSubArray {
     public static int maxSubArray(int[] array) {
-        int max_temp = array[0], max_final = array[0];
-        int left = 0;
-        int right = 0;
-
-        for (int i = 1; i < array.length; i++) {
-            if (array[i] > max_temp + array[i]) {
-                left = i;
-                max_temp = array[i];
-            } else {
-                max_temp += array[i];
-            }
-
-            if (max_temp > max_final) {
-                max_final = max_temp;
-                right = i;
-            }
+        int maxSum = array[0];
+        int n = array.length;
+        int curr_sum = 0;
+        for (int j : array) {
+            curr_sum = Math.max(curr_sum + j, j);
+            maxSum = Math.max(curr_sum, maxSum);
         }
-        System.out.println("Left: " + left + " Right: " + right);
-        return max_final;
+        return maxSum;
     }
 
     public static void main(String[] args) {
