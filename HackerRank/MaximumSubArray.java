@@ -1,12 +1,14 @@
+package HackerRank;
+
 import java.lang.Math;
 
 public class MaximumSubArray {
-    public static int maxSubArray(int[] array){
+    public static int maxSubArray(int[] array) {
         int max_temp = array[0], max_final = array[0];
         int left = 0;
         int right = 0;
 
-        for (int i = 1; i < array.length ; i++) {
+        for (int i = 1; i < array.length; i++) {
             if (array[i] > max_temp + array[i]) {
                 left = i;
                 max_temp = array[i];
@@ -23,7 +25,7 @@ public class MaximumSubArray {
         return max_final;
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         int[] a = {13, -3, -25, 20, -3, -16, -23, 18, 20};
         int result = maxSubArray(a);
         System.out.println("Result: " + result);
