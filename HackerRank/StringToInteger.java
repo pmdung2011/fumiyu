@@ -20,7 +20,8 @@ public class StringToInteger {
             index++;
         }
 
-        // convert str to integer
+        
+        // Build the result and check for overflow/underflow condition
         while (index < s.length() && Character.isDigit(s.charAt(index))) {
             int lastDigit = s.charAt(index++) - '0';
             if (result > Integer.MAX_VALUE / 10 || (result == Integer.MAX_VALUE / 10 && lastDigit > Integer.MAX_VALUE % 10))
