@@ -1,7 +1,7 @@
 package HackerRank;
 
 class PalindromeNum {
-    public static boolean isPalindrome(int x) {
+    public boolean isPalindrome(int x) {
         int newNum = 0, orgNum = x;
         if (x < 0) {
             return false;
@@ -14,10 +14,5 @@ class PalindromeNum {
             x /= 10;//Remove the last digit
         }
         return newNum - orgNum == 0;
-    }
-
-    public static void main(String[] args) {
-        int num = 123;
-        System.out.println(isPalindrome(num));
     }
 }
