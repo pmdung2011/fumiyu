@@ -8,19 +8,20 @@ package HackerRank;
 //leetcode
 public class FlippingImage {
     //Swap in place
-    public int[][] flipAndInvertImage(int[][] A) {
-        int length = A[0].length;
-        //Loop through the 2d array
-        for (int[] row : A) {
-            //loop each row
-            for (int i = 0; i < (length + 1) / 2; i++) {
-                //swap/flip
-                //then invert
+    public int[][] flipAndInvertImage(int[][] matrix) {
+        if (matrix.length == 0 || matrix[0].length == 0) {
+            return matrix;
+        }
+        int row_length = matrix[0].length; //get the length of each row
+        //loop through the entire matrix
+        for (int[] row : matrix) {
+            //loop through each row, doing the swap and invert the same time
+            for (int i = 0; i < (row_length + 1) / 2; i++) {
                 int temp = row[i] ^ 1;
-                row[i] = row[length - 1 - i] ^ 1;
-                row[length - 1 - i] = temp;
+                row[i] = row[row_length - 1 - i] ^ 1;
+                row[row_length - 1 - i] = temp;
             }
         }
-        return A;
+        return matrix;
     }
 }
