@@ -19,6 +19,6 @@ public class RepeatedAddition {
     }
 
     public static void main(String[] args) {
-        System.out.println(solve(5170952));
+        System.out.println(solve(1234));
     }
 }
